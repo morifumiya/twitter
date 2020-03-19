@@ -24,33 +24,33 @@ if (!empty($_POST)) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>会員登録</title>
 
-		<link rel="stylesheet" href="../style.css" />
-	</head>
-	<body>
-		<div id="wrap">
-			<div id="head">
-				<h1>会員登録</h1>
-			</div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>会員登録</title>
 
-			<div id="content">
+	<link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="head">
+			<h1>会員登録</h1>
+		</div>
+
+		<div id="content">
 			<p>記入した内容を確認して、「登録する」ボタンをクリックしてください</p>
 			<form action="" method="post">
 				<input type="hidden" name="action" value="submit" />
 				<dl>
 					<dt>ニックネーム</dt>
 					<dd>
-						<?php print(htmlspecialchars($_SESSION['join']
-						['name'], ENT_QUOTES)); ?>
+						<?php print(htmlspecialchars($_SESSION['join']['name'], ENT_QUOTES)); ?>
 					</dd>
 					<dt>メールアドレス</dt>
-					<?php print(htmlspecialchars($_SESSION['join']
-					['email'], ENT_QUOTES)); ?>
+					<?php print(htmlspecialchars($_SESSION['join']['email'], ENT_QUOTES)); ?>
 					<dd>
 					</dd>
 					<dt>パスワード</dt>
@@ -58,9 +58,8 @@ if (!empty($_POST)) {
 						【表示されません】
 					</dd>
 					<dt>写真など</dt>
-					<?php if ($_SEESION['join']['image'] !== ''): ?>
-						<img src="../member_picture/<?php print(htmlspecialchars
-						($_SESSION['join']['image'], ENT_QUOTES)); ?>">
+					<?php if ($_SEESION['join']['image'] !== '') : ?>
+						<img src="../member_picture/<?php print(htmlspecialchars($_SESSION['join']['image'], ENT_QUOTES)); ?>">
 					<?php endif; ?>
 					<dd>
 					</dd>
@@ -69,6 +68,7 @@ if (!empty($_POST)) {
 			</form>
 		</div>
 
-		</div>
-	</body>
+	</div>
+</body>
+
 </html>
